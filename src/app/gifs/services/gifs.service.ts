@@ -6,5 +6,14 @@ import { Injectable } from '@angular/core';
 export class GifsService {
   constructor() { }
 
-  private historial: string[] = []
+  private _historial: string[] = []
+
+  get historial() {
+    return [...this._historial]
+  }
+
+  bucarGifs( query: string ){
+    this._historial.unshift(query)
+    console.log(this._historial)
+  }
 }
