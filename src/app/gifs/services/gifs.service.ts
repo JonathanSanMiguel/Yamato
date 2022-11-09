@@ -10,10 +10,17 @@ export class GifsService {
 
   get historial() {
     return [...this._historial]
-  }
+  }//historial
 
   bucarGifs( query: string ){
-    this._historial.unshift(query)
+    query = query.trim().toLowerCase()
+
+    if( !this._historial.includes(query) ){
+      this._historial.unshift(query)
+      this._historial = this._historial.splice(0,10)
+    }//if
+
     console.log(this._historial)
-  }
-}
+  }//buscarGifs
+
+}//GifsService 
