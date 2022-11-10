@@ -7,12 +7,11 @@ import { GifsService } from '../services/gifs.service';
   styleUrls: ['./result.component.css']
 })
 export class ResultComponent {
-
-  get resultados(){
-    return this.servicio.results
-  }
-
   constructor( private servicio: GifsService) { }
 
+  //Llama al metodo del servicio para mostrar los resultados de busqueda
+  get resultados(){
+    return this.servicio.results
+  }//get resultados
 
-}
+}//ResultComponent
